@@ -5,6 +5,6 @@
 #include <cmath>
 #include <algorithm>
 
-bool compareFloats(float x, float y, std::string_view sign, float r_eps = 1e-5f);
+bool compareFloats(float x, float y, std::string_view sign, float rEps = 1e-5f);
 
 #endif

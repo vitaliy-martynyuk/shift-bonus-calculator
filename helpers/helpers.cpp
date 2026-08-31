@@ -1,6 +1,6 @@
 #include "helpers.h"
 
-bool compareFloats(float x, float y, std::string_view sign, float r_eps)
+bool compareFloats(float x, float y, std::string_view sign, float rEps)
 {
 	constexpr std::string_view greater{ ">" };
 	constexpr std::string_view less{ "<" };
@@ -10,17 +10,17 @@ bool compareFloats(float x, float y, std::string_view sign, float r_eps)
 	constexpr std::string_view notEqual{ "!=" };
 
 	if (sign == greater)
-		return (x - y) > r_eps * std::max(std::fabs(x), std::fabs(x));
+		return (x - y) > rEps * std::max(std::fabs(x), std::fabs(y));
 	if (sign == less)
-		return (y - x) > r_eps * std::max(std::fabs(x), std::fabs(x));
+		return (y - x) > rEps * std::max(std::fabs(x), std::fabs(y));
 	if (sign == greaterOrEqual)
-		return (x - y) >= -(r_eps * std::max(std::fabs(x), std::fabs(x)));
+		return (x - y) >= -(rEps * std::max(std::fabs(x), std::fabs(y)));
 	if (sign == lessOrEqual)
-		return (y - x) >= -(r_eps * std::max(std::fabs(x), std::fabs(x)));
+		return (y - x) >= -(rEps * std::max(std::fabs(x), std::fabs(y)));
 	if (sign == equal)
-		return std::fabs(x - y) <= r_eps * std::max(std::fabs(x), std::fabs(x));
+		return std::fabs(x - y) <= rEps * std::max(std::fabs(x), std::fabs(y));
 	if (sign == notEqual)
-		return std::fabs(x - y) > r_eps * std::max(std::fabs(x), std::fabs(x));
+		return std::fabs(x - y) > rEps * std::max(std::fabs(x), std::fabs(y));
 
 	return false;
 }

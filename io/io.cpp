@@ -1,4 +1,5 @@
 #include "io.h"
+#include "../helpers/helpers.h"
 
 float getWorkingHours()
 {
@@ -29,7 +30,16 @@ bool getQuota()
 
 void printBonuses(float hours, std::uint16_t shift, bool quota)
 {
-	std::cout << "Hours worked: " << hours << '\n';
-	std::cout << "Shift worked: " << shift << '\n';
-	std::cout << "Quota: " << quota << '\n';
+	if ((compareFloats(hours, 8.0f, ">=") && (shift % 2 != 0))
+		|| ((compareFloats(hours, 6.0f, ">=") && quota)))
+		std::cout << "Bonus: Full\n";
+	else if (compareFloats(hours, 4.0f, ">="))
+		std::cout << "Bonus: Half\n";
+	else
+		std::cout << "Bonus: None\n";
+
+	if (compareFloats(hours, 8.0f, "=="))
+		std::cout << "Payroll flag: Yes\n";
+	else
+		std::cout << "Payroll flag: No\n";
 }

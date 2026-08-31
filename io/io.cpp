@@ -6,7 +6,7 @@ float getHours()
 	float input{};
 	std::cin >> input;
 
-	return std::roundf(input * 10.0f) / 10.0f;
+	return input;
 }
 
 std::uint16_t getShift()

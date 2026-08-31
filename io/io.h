@@ -1,10 +1,11 @@
 #ifndef IO_H
 #define IO_H
 
+#include "io_validation.h"
 #include <cstdint>
 #include <iostream>
 
-float getHours();
+float getWorkingHours();
 std::uint16_t getShift();
 bool getQuota();
 

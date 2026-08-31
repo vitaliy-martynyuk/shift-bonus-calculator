@@ -1,6 +1,6 @@
 #include "io.h"
 
-float getHours()
+float getWorkingHours()
 {
 	std::cout << "Enter hours worked: ";
 	float input{};

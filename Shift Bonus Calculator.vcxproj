@@ -145,11 +145,15 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="helpers\helpers.cpp" />
     <ClCompile Include="io\io.cpp" />
+    <ClCompile Include="io\io_validation.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="helpers\helpers.h" />
     <ClInclude Include="io\io.h" />
+    <ClInclude Include="io\io_validation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
